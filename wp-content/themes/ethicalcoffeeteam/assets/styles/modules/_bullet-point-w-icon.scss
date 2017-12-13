@@ -1,0 +1,39 @@
+.bullet-point-w-icon-list{
+  &__item{
+    display: inline-block;
+    width:100%;
+    margin-bottom:10px;
+
+    &:last-child{
+      margin-bottom:0;
+    }
+
+    i{
+      float:left;
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      background:white;
+    }
+    p{
+      float:left;
+      color:white;
+      padding:13px 0 0 15px;
+      font-size: 1em;
+      font-family:$brand-font;
+    }
+  }
+
+  @include screen(medium){
+    &__item{
+      margin-bottom: 30px;
+      i{
+        width:50px;
+        height:50px;
+      }
+      p{
+        font-size: 1.2em;
+      }
+    }
+  }
+}

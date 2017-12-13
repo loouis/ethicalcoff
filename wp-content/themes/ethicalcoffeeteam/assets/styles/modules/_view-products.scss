@@ -1,0 +1,27 @@
+.view-products{
+  padding:8% 10% 10% 10%;
+  text-align: center;
+
+  i.line{
+    display: inline-block;
+  }
+
+  h2{
+    margin-bottom:4%;
+  }
+
+  ul {
+    text-align: center;
+
+    li{
+      margin:2%;
+      display: inline-block;
+      width:45.8%;
+      font-size:0;
+
+      h4{
+        margin-top:25px;
+      }
+    }
+  }
+}

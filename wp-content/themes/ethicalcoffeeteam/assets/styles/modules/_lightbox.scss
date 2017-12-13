@@ -1,0 +1,123 @@
+.lightbox{
+  // visibility: hidden;
+  // opacity: 0;
+  top:0;
+  transform: translateY(100%);
+  width:100%;
+  height:100%;
+  background-color:rgba(244,244,244,.98);
+  position: fixed;
+  left:0;
+  z-index: 101;
+  background-image:url(assets/images/contact-bg.png);
+  background-size:cover;
+  background-position: center center;
+
+  transition: all .3s ease-in-out;
+
+  &.contact-lightbox .wrapper{
+    margin-top:60px;
+  }
+
+  .wrapper{
+    width:100%;
+    padding:0 25px;
+    height:100%;
+    overflow-y:scroll;
+
+    .wrap{
+      margin:0 auto;
+      max-width:400px;
+
+      .contact-link{
+        text-align: center;
+        margin-bottom:10px;
+      }
+      p{
+        margin-bottom:0;
+      }
+
+      p.telephone-no{
+        font-family: $brand-font;
+      }
+
+      .wpcf7{
+        margin-top:30px;
+
+
+
+        .wpcf7-mail-sent-ok{
+          position: absolute;
+          background:#c0e2b6;
+          top:30%;
+          border:none;
+          font-family: $brand-font;
+          padding:16px 24px;
+          text-align: center;
+        }
+
+        p{
+          margin-bottom:10px;
+          transition: opacity .25s ease-in-out;
+        }
+      }
+
+      .wpcf7-form-control-wrap{
+        margin-top:6px;
+      }
+
+      input, textarea{
+        outline:none;
+        border:none;
+        width:100%;
+        padding:12px;
+        font-family:$copy-font;
+        font-size: 1em;
+
+        transition: all .25s ease-in-out;
+
+        &:focus{
+          box-shadow: 0 7px 8px rgba(0,0,0,.1);
+        }
+      }
+
+      label{
+        font-size: 0.9em;
+      }
+
+      textarea{
+        height:140px;
+      }
+
+      input[type="submit"]{
+        background:$brand-pink;
+        padding:14px 0;
+        margin-top:10px;
+        font-family: $brand-font;
+        color:white;
+        border-radius:100px;
+
+        transition: background .25s ease-in-out;
+
+        &:hover{
+          background: darken($brand-pink, 5%);
+        }
+      }
+    }
+  }
+
+  &--visible{
+    // visibility: visible;
+    // opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.sent{
+  p{
+    opacity: 0;
+  }
+  #__lpform_your-name_icon{
+    display: none;
+  }
+}

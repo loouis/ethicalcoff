@@ -1,0 +1,95 @@
+.close-btn{
+  margin-top:20px;
+  position:absolute;
+  width:60px;
+  right:3%;
+  outline:none;
+  border:none;
+  background:none;
+
+  i{
+    position: relative;
+    display: block;
+    width:50px;
+    height:50px;
+
+    .close-btn__line{
+      position: absolute;
+      width: 26px;
+      height: 1px;
+      top: 25px;
+      left: 17px;
+      background: black;
+
+      &:nth-child(1){
+        transform: rotate(-45deg);
+      }
+      &:nth-child(2){
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.back-button{
+  position:fixed;
+  z-index:99;
+  top:15px;
+  left:55px;
+  outline:0;
+  background:none;
+  border:none;
+
+  &__circle{
+    position: relative;
+    width:42px;
+    height:42px;
+    border:1px solid darken($brand-pink,15%);
+    border-radius:50%;
+
+    &__line{
+      position: absolute;
+      width:12px;
+      height:1px;
+      top:20px;
+      left:14px;
+      background:black;
+      transform-origin: left;
+      transition: transform .25s ease-in-out;
+
+      &--1{
+        transform: rotate(-41deg);
+      }
+      &--2{
+        transform: rotate(41deg);
+      }
+    }
+
+    &:hover{
+      .back-button__circle__line{
+        &--1{
+          transform: rotate(-48deg);
+        }
+        &--2{
+          transform: rotate(48deg);
+        }
+      }
+    }
+  }
+
+  @include screen(medium){
+    top:22px;
+    left:95px;
+
+    &__circle{
+      width:48px;
+      height:48px;
+
+      &__line{
+        width:14px;
+        top:22px;
+        left:16px;
+      }
+    }
+  }
+}

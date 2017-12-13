@@ -1,0 +1,114 @@
+.coffee-prd{
+  background:white;
+
+  &__hero{
+    position:relative;
+    width:100%;
+    height:400px;
+    background:$brand-pink url('assets/images/product-coffee-bg.png');
+    background-size:cover;
+    background-position: center bottom;
+
+    h1{
+      position:absolute;
+      bottom:0;
+      width:100%;
+      text-align: center;
+      color:white;
+      z-index: 2;
+      font-size:3em;
+      // text-shadow: 1px 1px 10px rgba(226, 198, 182,0.6);
+    }
+
+    &__intro-content{
+      position:absolute;
+      left:50%;
+      right:50%;
+      width: 240px;
+      margin-left: -120px;
+      bottom: -50px;
+      z-index: 1;
+
+      @media screen and(min-width:1200px){
+        width:340px;
+        margin-left:-170px;
+        bottom:-90px;
+      }
+    }
+  }
+
+  &__info{
+    position: relative;
+    text-align: center;
+    @include clearfix;
+
+    &__desc{
+      position: relative;
+      @include clearfix;
+      max-width:600px;
+      padding: 0 30px;
+      margin: 30px auto 80px  auto;
+    }
+
+
+    // h3{
+    //   position: absolute;
+    //   top:-50px;
+    //   width:100%;
+    //   text-align:center;
+    //   font-size: 3em;
+    //   color:$brand-pink;
+    //   opacity: 0.3;
+    //   margin-bottom:30px;
+    // }
+    &__points{
+      display: inline-block;
+      background:#f4f4f4;
+      padding:50px 30px 25px 30px;
+      @include clearfix;
+
+      &__point{
+        padding:0 20px;
+        display: inline-block;
+        margin-bottom:15px;
+
+        h4{
+          margin-bottom:10px;
+        }
+        p{
+          font-size:0.65em;
+          color:#d8bcac;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          margin-bottom:0;
+        }
+      }
+    }
+  }
+
+  @include screen(medium){
+    &__hero{
+      height:500px;
+
+      h1{
+        font-size:5em;
+      }
+
+      &__intro-content{
+        z-index:1;
+      }
+    }
+
+    &__info{
+      margin-top:80px;
+
+      &__points{
+        padding:30px 30px 25px 30px;
+
+        &__point{
+          margin-bottom:0;
+        }
+      }
+    }
+  }
+}

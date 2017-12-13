@@ -1,0 +1,260 @@
+.product-list{
+
+  &__item{
+    position: relative;
+    float:left;
+    width:100%;
+    height:auto;
+    display: block;
+    padding-top:0px;
+
+    // Show more image
+    .product-list--machines &{
+      &--98, &--94{
+        .product-list__item__prd-detail{
+          img{
+            right: -20%;
+          }
+        }
+      }
+    }
+
+    &--1, &--5, &--9, &--10, &--14, &--18 {
+      background:$brand-pink;
+    }
+    &--2, &--6, &--7, &--11, &--15, &--16  {
+      background:lighten($brand-pink, 3%);
+    }
+    &--3, &--4, &--8, &--12, &--13, &--17  {
+      background:lighten($brand-pink, 6%);
+    }
+  }
+
+  &--coffee{
+    background:white;
+    @include clearfix;
+
+    .product-list{
+
+      &__item{
+
+        &__prd-detail{
+          position: relative;
+          bottom:-16%;
+          width:80%;
+          margin: 0 auto;
+          height:100%;
+
+          &__text{
+            position: absolute;
+            color:white;
+            padding:0 10% 0 0;
+            bottom:16%;
+            z-index:3;
+
+            h4{
+              position:relative;
+              padding-left:30px;
+              margin-bottom: 10px;
+
+              &:before{
+                content:"";
+                position:absolute;
+                width:20px;
+                height:2px;
+                background:white;
+                left:0;
+                top:50%;
+                transform: translateY(-50%);
+              }
+            }
+          }
+
+          img{
+            position:relative;
+
+            @include screen(medium){
+              bottom:-80px;
+            }
+          }
+
+          h3{
+            color:white;
+            font-size: 3.2em;
+          }
+        }
+      }
+    }
+
+    @include screen(medium){
+      padding-bottom:100px;
+    }
+  }
+
+  &--machines{
+    .product-list{
+
+      &__item{
+        overflow:hidden;
+
+        &__prd-detail{
+          position: relative;
+          bottom:-16%;
+          width:100%;
+          margin: 0 auto;
+          height:100%;
+
+          img{
+            position: relative;
+            right:-40%;
+            transform: translateX(0);
+            // width:60%;
+
+            transition: transform .25s ease-in-out, opacity .25s ease-in-out;
+
+            &.show-more-image{
+              right:-20%;
+            }
+          }
+
+          &__text{
+            position: absolute;
+            color:white;
+            padding:0 10% 0 10%;
+            bottom:16%;
+            z-index:3;
+
+            h4{
+              position:relative;
+              padding-left:30px;
+              margin-bottom: 15px;
+
+              &:before{
+                content:"";
+                position:absolute;
+                width:20px;
+                height:2px;
+                background:white;
+                left:0;
+                top:50%;
+                transform: translateY(-50%);
+              }
+            }
+
+            &__desc{
+              opacity:0;
+              visibility: hidden;
+              color:white;
+              display: none;
+            }
+
+            h3{
+              font-size:em(70px);
+              margin-bottom:16px;
+            }
+          }
+        }
+
+        &:hover{
+          .product-list__item{
+
+            &__prd-detail{
+
+              img{
+                opacity:.3;
+                transform: translateX(30px);
+              }
+              &__text{
+
+                &__desc{
+                  opacity:1;
+                  visibility: visible;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include screen(smallmiddle){
+    &__item{
+      width:50%;
+
+      .product-list--machines & {
+
+        &__prd-detail{
+
+          &__text{
+
+            h4{
+              font-size:em(14px);
+            }
+            h3{
+              font-size:em(40px);
+            }
+          }
+        }
+      }
+    }
+  }
+  @include screen(medium){
+    &__item{
+      width:33.33%;
+
+      .product-list--machines & {
+
+        &__prd-detail{
+
+          // img{
+          //   position: relative;
+          //   right:-40%;
+          //   transform: translateX(0);
+          //
+          //   transition: transform .25s ease-in-out, opacity .25s ease-in-out;
+          //
+          //   &.show-more-image{
+          //     right:-20%;
+          //   }
+          // }
+
+          &__text{
+
+            h4{
+              font-size:em(18px);
+            }
+            h3{
+              font-size:em(50px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include screen(mediummiddle){
+
+    &__item{
+      .product-list--machines & {
+
+        &__prd-detail{
+
+          &__text{
+
+            h4{
+              font-size:em(18px);
+            }
+            h3{
+              font-size:em(66px);
+            }
+            &__desc{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

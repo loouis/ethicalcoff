@@ -1,0 +1,65 @@
+.our-clients{
+  position:relative;
+  padding:80px 0;
+  background:white;
+  z-index: 3;
+
+  .title{
+    margin-bottom:30px;
+    text-align: center;
+
+    @include screen(medium){
+      margin-bottom:50px;
+    }
+
+    h3{
+      color:$brand-pink;
+      opacity:0.3;
+      margin-bottom:10px;
+      font-size:1.6em;
+    }
+    h2{
+      font-size: 2em;
+      color:$brand-pink;
+    }
+
+    @include screen(medium){
+      h3{
+      }
+      h2{
+        font-size: 4em;
+      }
+    }
+  }
+
+  &__testimonials{
+    text-align: center;
+    max-width:600px;
+    margin: 0 auto;
+
+    &__testimonial{
+
+      p{
+        font-size: 1em;
+
+        @include screen(medium){
+          font-size: 1.6em;
+        }
+      }
+
+      footer{
+        text-align: center;
+        margin-bottom:40px;
+
+        cite, p{
+          display: inline-block;
+          font-family: $copy-font;
+          font-size: 0.9em;
+          font-weight:200;
+          line-height: 1.6em;
+          margin-bottom:0;
+        }
+      }
+    }
+  }
+}

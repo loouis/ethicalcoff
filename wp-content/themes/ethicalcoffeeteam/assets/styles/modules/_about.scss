@@ -1,0 +1,284 @@
+body.about{
+  background:$brand-pink;
+  .main-header .logo{
+    display: none;
+  }
+}
+
+.scroll-to-next-section{
+  position:absolute;
+  width:50px;
+  height:50px;
+  bottom:30px;
+  left:50%;
+  right:50%;
+  margin-left:-18px;
+  z-index: 10;
+}
+
+.about-nav{
+  display:none;
+
+  &:hover{
+    a{
+      opacity:0.6;
+    }
+  }
+  a{
+    position: relative;
+    font-family:$brand-font;
+    display: inline-block;
+    padding:40px 0;
+    margin-left:10px;
+    margin-right:10px;
+    color:white;
+    letter-spacing: 0.03em;
+    overflow: hidden;
+
+    &:hover{
+      opacity:1;
+    }
+
+    &:before{
+      content:"";
+      position:absolute;
+      bottom:34px;
+      width: 98%;
+      left: 0;
+      height:2px;
+      background:white;
+      transform: translateX(-102%);
+
+      transition: transform .25s ease-in-out;
+    }
+
+    &.active{
+      &:before{
+        transform: translateX(0);
+      }
+    }
+  }
+
+  @include screen(medium){
+    display:block;
+    position:fixed;
+    z-index: 30;
+    top:0;
+    left:0;
+    width:100%;
+    text-align: center;
+    background:$brand-pink;
+    background-size:cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+  }
+}
+
+.hero{
+  height:350px;
+  width:100%;
+  position: relative;
+  background:$brand-pink url('assets/images/about-page-about-us-1-sec.jpg');
+  background-size:cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  @include screen(medium){
+    height:100vh;
+  }
+}
+
+.about-page-section{
+  position: relative;
+  padding:50px 0;
+
+  // padding:15% 0;
+  background:$brand-pink;
+  background-size:cover !important;
+  background-repeat:no-repeat;
+  @include clearfix;
+
+  @include screen(medium){
+    padding:auto;
+    display: flex;
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+
+    &--image{
+      background-attachment: fixed;
+      p{
+        text-shadow: 1px 1px 1px rgba(105,83,50,.9);
+      }
+
+    }
+  }
+
+  .wrapper{
+    z-index: 3;
+  }
+
+
+  // &--first{
+  //   padding-top:25%;
+  // }
+
+  .image{
+    position: absolute;
+    margin:0 auto;
+    z-index:0;
+    left:50%;
+    margin-left:-250px;
+    top:50%;
+    margin-top:-250px;
+    width:500px;
+    height: 500px;
+    background:blue;
+    border-radius:50%;
+    overflow:hidden;
+  }
+  &__r-content{
+    margin-top: 20px;
+    p{
+      color:white;
+    }
+  }
+
+  .wrapper{
+    max-width:1200px;
+
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+    top:0;
+
+    @include screen(medium){
+      height:300px;
+    }
+
+    .split-screen{
+      width:100%;
+
+      @include screen(medium){
+        width:35%;
+      }
+
+      &:nth-child(2){
+        float:right;
+      }
+    }
+
+    h2{
+      color:white;
+      font-size:em(50px);
+      text-align:left;
+    }
+  }
+
+  @media screen and(min-width:600px){
+    .wrapper{
+      h2{
+        text-align: left;
+        font-size:em(50px);
+      }
+    }
+  }
+
+  @media screen and(min-width:750px){
+    .wrapper{
+      h2{
+        text-align: right;
+      }
+    }
+  }
+
+
+  @media screen and(min-width:980px){
+    .wrapper{
+      h2{
+        font-size:em(70px);
+      }
+    }
+    &__r-content{
+      margin-top: auto;
+      p{
+        font-weight:400;
+        font-size:em(20px);
+      }
+    }
+  }
+  @media screen and(min-width:1100px){
+    .wrapper{
+      h2{
+        font-size:em(80px);
+      }
+    }
+  }
+
+}
+
+.about-logo{
+  width:100%;
+  height:100%;
+  margin: 0 auto;
+  position:absolute;
+  z-index: 2;
+
+  .logo-bits{
+    display: block;
+    position: relative;
+    width:50%;
+    overflow: hidden;
+    top:50%;
+    transform:translateY(-58%);
+    margin:0 auto;
+    height:auto;
+
+    svg{
+      // fill:darken($brand-pink, 3%);
+      fill:white;
+      opacity: 0.8;
+      transition: fill .25s ease-in-out;
+    }
+
+    .logo-symbol{
+      float:left;
+      width:30%;
+      margin:0 4%;
+    }
+
+    .logo-text{
+      float:left;
+      position:relative;
+      width:30%;
+      opacity:0;
+      margin-top:22%;
+      transition: opacity .25s ease-in-out;
+
+      &--ethical{
+        right:0;
+      }
+    }
+  }
+  &--not-scrolled{
+
+    .logo-bits{
+      svg{
+        fill:white;
+        opacity: 1;
+      }
+
+      .logo-text{
+        opacity:1;
+      }
+    }
+  }
+
+  @include screen(medium){
+    position:fixed;
+  }
+}
+
+.test{
+  height:3000px;
+}
